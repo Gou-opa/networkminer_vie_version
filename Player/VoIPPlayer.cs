@@ -148,17 +148,16 @@ namespace Player
             }
         }
 
-        private loadData()
+        private void loadData()
         {
-            try
-            {
-                DataTable voiptable = new DataTable();
-                voiptable.Columns.Add("#");
-                voiptable.Columns.Add("From pcap");
-                voiptable.Columns.Add("From"); // include port in address
-                voiptable.Columns.Add("To");
-                voiptable.Columns.Add("Folder");
-            }
+            
+            DataTable voiptable = new DataTable();
+            voiptable.Columns.Add("#");
+            voiptable.Columns.Add("From pcap");
+            voiptable.Columns.Add("From"); // include port in address
+            voiptable.Columns.Add("To");
+            voiptable.Columns.Add("Folder");
+            this.voipDataGridView.DataSource = voiptable;
         }
         private void prevTrack_Click(object sender, EventArgs e)
         {

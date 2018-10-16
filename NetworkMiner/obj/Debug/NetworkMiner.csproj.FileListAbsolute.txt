@@ -330,3 +330,5 @@ T:\Dev\voip_wireshark\networkminer_vie_version\NetworkMiner\obj\Debug\vi-VN\Netw
 T:\Dev\voip_wireshark\networkminer_vie_version\NetworkMiner\obj\Debug\NetworkMiner.csproj.CopyComplete
 T:\Dev\voip_wireshark\networkminer_vie_version\NetworkMiner\obj\Debug\NetworkMiner.exe
 T:\Dev\voip_wireshark\networkminer_vie_version\NetworkMiner\obj\Debug\NetworkMiner.pdb
+T:\Dev\voip_wireshark\networkminer_vie_version\NetworkMiner\bin\Debug\AxInterop.WMPLib.dll
+T:\Dev\voip_wireshark\networkminer_vie_version\NetworkMiner\bin\Debug\Interop.WMPLib.dll

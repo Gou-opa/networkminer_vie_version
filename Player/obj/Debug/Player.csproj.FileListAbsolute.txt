@@ -12,3 +12,8 @@ T:\Dev\voip_wireshark\networkminer_vie_version\Player\bin\Debug\pcapdatacopy.dll
 T:\Dev\voip_wireshark\networkminer_vie_version\Player\bin\Debug\pcapdatacopy.pdb
 T:\Dev\voip_wireshark\networkminer_vie_version\Player\obj\Debug\Player.csproj.CopyComplete
 T:\Dev\voip_wireshark\networkminer_vie_version\Player\obj\Debug\Player.chooseFileOrFolderToScan.resources
+T:\Dev\voip_wireshark\networkminer_vie_version\Player\obj\Debug\Interop.WMPLib.dll
+T:\Dev\voip_wireshark\networkminer_vie_version\Player\obj\Debug\AxInterop.WMPLib.dll
+T:\Dev\voip_wireshark\networkminer_vie_version\Player\obj\Debug\Player.csproj.ResolveComReference.cache
+T:\Dev\voip_wireshark\networkminer_vie_version\Player\bin\Debug\Interop.WMPLib.dll
+T:\Dev\voip_wireshark\networkminer_vie_version\Player\bin\Debug\AxInterop.WMPLib.dll

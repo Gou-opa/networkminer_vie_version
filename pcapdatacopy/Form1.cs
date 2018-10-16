@@ -1882,20 +1882,20 @@ namespace pcapdatacopy
 									string item = string.Concat(new string[]
 									{
 										text,
-										",",
-										text2,
-										",",
-										Conversions.ToString(array3[0]),
+										"@",
+                                        port1.ToString(),
+                                        "to",
+                                        text2,
+										"@",
+                                        port2.ToString(),
+                                        "-",
+                                        Conversions.ToString(array3[0]),
 										"-",
 										Conversions.ToString(array3[1]),
 										"-",
 										Conversions.ToString(array3[2]),
 										"-",
-										Conversions.ToString(array3[3]),
-										",",
-										port1.ToString(),
-										",",
-										port2.ToString()
+										Conversions.ToString(array3[3])
 									});
 									flag2 = (port1 != port2);
 									if (flag2)
