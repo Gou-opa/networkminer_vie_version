@@ -1921,13 +1921,13 @@ namespace NetworkMiner {
             //this.openFileDialog1.ShowDialog();
             if (this.openPcapFileDialog.ShowDialog() == DialogResult.OK) {
                 string filepath = this.openPcapFileDialog.FileName;
-                string filedir = Path.GetDirectoryName(filepath);
+                //string filedir = Path.GetDirectoryName(filepath);
                 string filename = Path.GetFileName(filepath);
                 this.LoadPcapFile(filepath);
                 if (!this.pcapFiles.Contains(filepath)){
                     this.pcapFiles.Add(filepath);
-                    if (!this.pcapFolders.Contains(filedir))
-                        this.pcapFolders.Add(filedir);
+                    //if (!this.pcapFolders.Contains(filedir))
+                       // this.pcapFolders.Add(filedir);
                     this.updateCurrentFileVoipFromCurrent(filename);
                     Console.WriteLine(this.pcapFiles.Count + " / " + this.pcapFolders.Count);
                 }
@@ -2280,7 +2280,7 @@ namespace NetworkMiner {
                     try {
                         PacketParser.Utils.ByteConverter.ToByteArrayFromHexString(keyword);//to force valid hex
                         this.keywordListBox.Items.Add(keyword);
-                        //Lägg till keywordet till PacketHandler.PacketHandler!!!
+                        //Lï¿½gg till keywordet till PacketHandler.PacketHandler!!!
                     }
                     catch (Exception ex) {
                         errorMessage = ex.Message;
@@ -2365,7 +2365,7 @@ namespace NetworkMiner {
 #endregion
 
         private void hostSortOrderComboBox_SelectedIndexChanged(object sender, EventArgs e) {
-            //HÄR SKA detailsHeader LIGGA Enabled MASSA OLIKA SORTERINGSORDNINGAR:
+            //Hï¿½R SKA detailsHeader LIGGA Enabled MASSA OLIKA SORTERINGSORDNINGAR:
             //IP, HOTSNAME, SENT PACKETS, RECEIVED PACKETS, MAC ADDRESS
             this.detectedHostsTreeRebuildButton_Click(sender, e);
         }

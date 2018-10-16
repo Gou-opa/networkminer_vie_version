@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoipPlayer));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.PlayerGroup = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.nextTrack = new System.Windows.Forms.PictureBox();
             this.skip = new System.Windows.Forms.PictureBox();
             this.stop = new System.Windows.Forms.PictureBox();
             this.pause = new System.Windows.Forms.PictureBox();
             this.play = new System.Windows.Forms.PictureBox();
             this.back = new System.Windows.Forms.PictureBox();
-            this.prevTrack = new System.Windows.Forms.PictureBox();
             this.AnalyseGroup = new System.Windows.Forms.GroupBox();
             this.OpenFolder = new System.Windows.Forms.PictureBox();
             this.OpenFile = new System.Windows.Forms.PictureBox();
             this.scan = new System.Windows.Forms.PictureBox();
+            this.prevTrack = new System.Windows.Forms.PictureBox();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.PlayerGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextTrack)).BeginInit();
@@ -51,11 +53,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prevTrack)).BeginInit();
             this.AnalyseGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OpenFolder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prevTrack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -64,7 +67,7 @@
             this.dataGridView.Location = new System.Drawing.Point(12, 79);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(844, 359);
+            this.dataGridView.Size = new System.Drawing.Size(422, 359);
             this.dataGridView.TabIndex = 0;
             // 
             // PlayerGroup
@@ -84,21 +87,6 @@
             this.PlayerGroup.TabIndex = 1;
             this.PlayerGroup.TabStop = false;
             this.PlayerGroup.Text = "Player";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(276, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(405, 22);
-            this.textBox1.TabIndex = 11;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(276, 41);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(334, 10);
-            this.progressBar.TabIndex = 9;
             // 
             // nextTrack
             // 
@@ -166,17 +154,6 @@
             this.back.TabStop = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // prevTrack
-            // 
-            this.prevTrack.Image = global::Player.Properties.Resources.Media_Controls_Skip_To_Start_icon;
-            this.prevTrack.Location = new System.Drawing.Point(12, 20);
-            this.prevTrack.Name = "prevTrack";
-            this.prevTrack.Size = new System.Drawing.Size(30, 30);
-            this.prevTrack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.prevTrack.TabIndex = 2;
-            this.prevTrack.TabStop = false;
-            this.prevTrack.Click += new System.EventHandler(this.prevTrack_Click);
-            // 
             // AnalyseGroup
             // 
             this.AnalyseGroup.Controls.Add(this.OpenFolder);
@@ -222,11 +199,47 @@
             this.scan.TabStop = false;
             this.scan.Click += new System.EventHandler(this.scan_Click);
             // 
+            // prevTrack
+            // 
+            this.prevTrack.Image = global::Player.Properties.Resources.Media_Controls_Skip_To_Start_icon;
+            this.prevTrack.Location = new System.Drawing.Point(12, 20);
+            this.prevTrack.Name = "prevTrack";
+            this.prevTrack.Size = new System.Drawing.Size(30, 30);
+            this.prevTrack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.prevTrack.TabIndex = 2;
+            this.prevTrack.TabStop = false;
+            this.prevTrack.Click += new System.EventHandler(this.prevTrack_Click);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(276, 41);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(334, 10);
+            this.progressBar.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Location = new System.Drawing.Point(276, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(405, 22);
+            this.textBox1.TabIndex = 11;
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(464, 140);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(366, 140);
+            this.axWindowsMediaPlayer1.TabIndex = 0;
+            // 
             // VoipPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 450);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.AnalyseGroup);
             this.Controls.Add(this.PlayerGroup);
             this.Controls.Add(this.dataGridView);
@@ -242,11 +255,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prevTrack)).EndInit();
             this.AnalyseGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OpenFolder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prevTrack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,8 +269,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.GroupBox PlayerGroup;
-        private System.Windows.Forms.PictureBox prevTrack;
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.PictureBox nextTrack;
         private System.Windows.Forms.PictureBox skip;
         private System.Windows.Forms.PictureBox stop;
@@ -264,10 +276,13 @@
         private System.Windows.Forms.PictureBox play;
         private System.Windows.Forms.PictureBox back;
         private System.Windows.Forms.PictureBox OpenFile;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox scan;
         private System.Windows.Forms.GroupBox AnalyseGroup;
         private System.Windows.Forms.PictureBox OpenFolder;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.PictureBox prevTrack;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 

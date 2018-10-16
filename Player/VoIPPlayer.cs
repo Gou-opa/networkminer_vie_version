@@ -42,23 +42,23 @@ namespace Player
             int nofile = 0;
             int nofolder = 0;
             string folder1 = "";
-            string folder2 = "";
+            //string folder2 = "";
             string file = "";
             if (this.processor.file_selected_textbox.Text.Length > 0)
             {
                 file = this.processor.file_selected_textbox.Text;
-                folder2 = Path.GetDirectoryName(this.processor.file_selected_textbox.Text);
+                //folder2 = Path.GetDirectoryName(this.processor.file_selected_textbox.Text);
                 if (!this.CurrentFileList.Contains(file))
                 {
                     this.CurrentFileList.Add(file);
                     nofile++;
                 }
                 
-                if (!this.CurrentFolderList.Contains(folder2))
-                {
-                    this.CurrentFolderList.Add(folder2);
-                    nofolder++;
-                }
+                //if (!this.CurrentFolderList.Contains(folder2))
+                //{
+                //    this.CurrentFolderList.Add(folder2);
+                //    nofolder++;
+                //}
             }
             if (this.processor.folder_selected_textbox.Text.Length > 0)
             {
@@ -159,7 +159,8 @@ namespace Player
 
         private void play_Click(object sender, EventArgs e)
         {
-            SoundPlayer selectedCallWAV = new SoundPlayer(@"");
+            Interaction.MsgBox("Open wav at: " + this.audioList[0], MsgBoxStyle.OkOnly, "Play");
+            SoundPlayer selectedCallWAV = new SoundPlayer(this.audioList[0]);
             selectedCallWAV.Play();
         }
 
