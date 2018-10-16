@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoipPlayer));
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.voipDataGridView = new System.Windows.Forms.DataGridView();
             this.PlayerGroup = new System.Windows.Forms.GroupBox();
             this.nextTrack = new System.Windows.Forms.PictureBox();
             this.skip = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voipDataGridView)).BeginInit();
             this.PlayerGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skip)).BeginInit();
@@ -61,14 +61,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // voipDataGridView
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 79);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(422, 359);
-            this.dataGridView.TabIndex = 0;
+            this.voipDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.voipDataGridView.Location = new System.Drawing.Point(12, 79);
+            this.voipDataGridView.Name = "voipDataGridView";
+            this.voipDataGridView.RowTemplate.Height = 24;
+            this.voipDataGridView.Size = new System.Drawing.Size(422, 359);
+            this.voipDataGridView.TabIndex = 0;
             // 
             // PlayerGroup
             // 
@@ -242,11 +242,11 @@
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.AnalyseGroup);
             this.Controls.Add(this.PlayerGroup);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.voipDataGridView);
             this.Name = "VoipPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Network Miner - VoIP Player";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voipDataGridView)).EndInit();
             this.PlayerGroup.ResumeLayout(false);
             this.PlayerGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextTrack)).EndInit();
@@ -267,7 +267,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView voipDataGridView;
         private System.Windows.Forms.GroupBox PlayerGroup;
         private System.Windows.Forms.PictureBox nextTrack;
         private System.Windows.Forms.PictureBox skip;

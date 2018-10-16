@@ -1875,10 +1875,10 @@ namespace pcapdatacopy
 									array3[1] = (int)this.mybytes[num + num4 + 51];
 									array3[2] = (int)this.mybytes[num + num4 + 52];
 									array3[3] = (int)this.mybytes[num + num4 + 53];
-									int num8 = (int)this.mybytes[num + num4 + 34] * 256;
-									num8 += (int)this.mybytes[num + num4 + 35];
-									int num9 = (int)this.mybytes[num + num4 + 36] * 256;
-									num9 += (int)this.mybytes[num + num4 + 37];
+									int port1 = (int)this.mybytes[num + num4 + 34] * 256;
+									port1 += (int)this.mybytes[num + num4 + 35];
+									int port2 = (int)this.mybytes[num + num4 + 36] * 256;
+									port2 += (int)this.mybytes[num + num4 + 37];
 									string item = string.Concat(new string[]
 									{
 										text,
@@ -1893,11 +1893,11 @@ namespace pcapdatacopy
 										"-",
 										Conversions.ToString(array3[3]),
 										",",
-										num8.ToString(),
+										port1.ToString(),
 										",",
-										num9.ToString()
+										port2.ToString()
 									});
-									flag2 = (num8 != num9);
+									flag2 = (port1 != port2);
 									if (flag2)
 									{
 										flag = !this.rtp_list.Contains(item);
@@ -1937,10 +1937,10 @@ namespace pcapdatacopy
 										"-",
 										Conversions.ToString(array3[3])
 									});
-									int num8 = (int)this.mybytes[num + num4 + 34] * 256;
-									num8 += (int)this.mybytes[num + num4 + 35];
-									int num9 = (int)this.mybytes[num + num4 + 36] * 256;
-									num9 += (int)this.mybytes[num + num4 + 37];
+									int port1 = (int)this.mybytes[num + num4 + 34] * 256;
+									port1 += (int)this.mybytes[num + num4 + 35];
+									int port2 = (int)this.mybytes[num + num4 + 36] * 256;
+									port2 += (int)this.mybytes[num + num4 + 37];
 									string[] array6 = Strings.Split(this.rtp_stream_name, ",", -1, CompareMethod.Binary);
 									this.match_rtp_packet = false;
 									this.protocol_name = "INVALID";
@@ -1953,10 +1953,10 @@ namespace pcapdatacopy
 											flag2 = (Operators.CompareString(left, array6[2], false) != 0);
 											if (!flag2)
 											{
-												flag2 = ((double)num8 != Conversion.Val(array6[3]));
+												flag2 = ((double)port1 != Conversion.Val(array6[3]));
 												if (!flag2)
 												{
-													flag2 = ((double)num9 != Conversion.Val(array6[4]));
+													flag2 = ((double)port2 != Conversion.Val(array6[4]));
 													if (!flag2)
 													{
 														this.match_rtp_packet = true;

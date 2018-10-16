@@ -147,6 +147,19 @@ namespace Player
                 msgbox.ShowDialog();
             }
         }
+
+        private loadData()
+        {
+            try
+            {
+                DataTable voiptable = new DataTable();
+                voiptable.Columns.Add("#");
+                voiptable.Columns.Add("From pcap");
+                voiptable.Columns.Add("From"); // include port in address
+                voiptable.Columns.Add("To");
+                voiptable.Columns.Add("Folder");
+            }
+        }
         private void prevTrack_Click(object sender, EventArgs e)
         {
 
